@@ -72,15 +72,17 @@
 
 דוגמה לקריאת API בתוך קומפוננטת React או קובץ TypeScript:
 
+
 ```javascript
 fetch(`${import.meta.env.VITE_API_URL}/api/items`)
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching items:', error));
-
-🧱 מבנה הפרויקט
-מבנה הספריות והקבצים העיקרי בפרויקט:
-
+```
+5.**מבנה הפרויקט:**
+                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+```javascript
 src/
 ├── components/ # רכיבי UI קטנים וניתנים לשימוש חוזר
 ├── pages/      # דפי תצוגה ראשיים המרכיבים את הממשק
@@ -89,3 +91,7 @@ src/
 └── main.tsx    # נקודת הכניסה של האפליקציה
 .env            # קובץ הגדרות סביבה
 vite.config.ts  # קובץ הגדרות של Vite
+```
+
+
+
