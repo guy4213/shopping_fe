@@ -2,6 +2,7 @@
 
 import { makeAutoObservable } from "mobx";
 import type { CartItem, Category } from "../types";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export class CartStore {
   items: CartItem[] = [];
@@ -74,7 +75,7 @@ export class CartStore {
     }));
 
     try {
-      const response = await fetch('http://localhost:3001/cart', { // נניח שזה הנתיב הנכון
+      const response = await fetch(`${API_URL}/cart`, { // נניח שזה הנתיב הנכון
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

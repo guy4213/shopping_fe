@@ -5,6 +5,8 @@ import { observer } from 'mobx-react-lite';
 import { StoreContext } from '../main';
 
 export const AddItemForm = observer(() => {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const store = useContext(StoreContext);
   const [name, setName] = useState('');
   const [categoryId, setCategoryId] = useState<number|null>(null);
@@ -15,7 +17,7 @@ const options = store.categories.map(c => ({
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await fetch('http://localhost:3001/categories');
+        const res = await fetch(`${API_URL}/categories`);
         const data = await res.json();
         store.setCategories(data);
       } catch (err) {
