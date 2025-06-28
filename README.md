@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# Shopping List Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+זהו ה־frontend של אפליקציית רשימת הקניות, מבוסס React ו־Vite.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 טכנולוגיות
 
-## Expanding the ESLint configuration
+- **React עם TypeScript** – בניית ממשק משתמש מודרני ומרכיבי  
+- **Vite** – כלי בנייה מהיר ויעיל לפרונטאנד  
+- **MobX** (אופציונלי) – ניהול סטייט מקומי  
+- **Tailwind CSS** (אופציונלי) – עיצוב מהיר עם CSS מבוסס תועלת (utility-first)  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ פונקציונליות
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- צפייה, הוספה והסרה של פריטים מרשימת הקניות  
+- מיון וסינון לפי קטגוריות  
+- ניהול כמות פריטים אוטומטי  
+- ממשק רספונסיבי – מותאם לנייד ודסקטופ  
+- עדכונים בזמן אמת באמצעות קריאות ל־API של ה־backend  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 עיצוב
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- ממשק נקי ופשוט, רספונסיבי  
+- כפתורים ורכיבים מעוצבים לנוחות המשתמש  
+- שימוש באייקונים ובתגים להבחנה בין סוגי פריטים  
+- התאמה למובייל עם נקודות שבירה (breakpoints) מותאמות  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠 איך להרים מקומית
+
+### דרישות
+
+- Node.js (גרסה 18 ומעלה מומלצת)  
+- backend רץ בכתובת `http://localhost:3000`  
+
+### שלבים
+
+1. שיבוט הפרויקט:
+
+   ```bash
+   git clone https://github.com/your-username/shopping-list-frontend.git
+   cd shopping-list-frontend
+התקנת התלויות:
+
+bash
+Copy
+Edit
+npm install
+יצירת קובץ .env:
+
+env
+Copy
+Edit
+VITE_API_URL=http://localhost:3000
+כדי שהפרונטאנד ידבר עם ה־backend המקומי.
+
+הפעלת הפרויקט
+bash
+Copy
+Edit
+npm run dev
+הפרויקט יפעל בכתובת:
+
+arduino
+Copy
+Edit
+http://localhost:5173
+🧠 דוגמת קריאת API
+ts
+Copy
+Edit
+fetch(`${import.meta.env.VITE_API_URL}/api/items`)
+🧱 מבנה הפרויקט
+bash
+Copy
+Edit
+src/
+  ├── components/    # רכיבי UI
+  ├── pages/         # דפי תצוגה
+  ├── stores/        # חנויות MobX (אם יש)
+  ├── App.tsx
+  └── main.tsx
+.env
+vite.config.ts
