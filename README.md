@@ -79,7 +79,7 @@ fetch(`${import.meta.env.VITE_API_URL}/api/items`)
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching items:', error));
 ```
-5.**מבנה הפרויקט:**
+<h2>✨ מבנה הפרויקט</h2>
                                                                                                                                                                                                                                                                                                                
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 ```javascript
