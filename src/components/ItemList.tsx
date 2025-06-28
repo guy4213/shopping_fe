@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import  { useContext, useState } from "react";
 import { observer } from "mobx-react-lite";
 import { StoreContext } from "../main";
 import type { CartItem } from "../types";
