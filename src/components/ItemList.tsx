@@ -34,7 +34,7 @@ export const ItemList = observer(() => {
   };
 
   return (
-    <div className="max-w-md w-full mx-auto mt-6 px-4 sm:px-6 lg:px-0" dir="rtl">
+    <div className="max-w-lg w-full mx-auto mt-6 px-4 sm:px-6 lg:px-0" dir="rtl">
       <div className="bg-white rounded-2xl shadow-md p-4 sm:p-6">
         <h2 className="text-xl font-bold text-center mb-4 text-gray-800">
           📋 רשימת פריטים ({totalItems} סה״כ פריטים)
